@@ -1,0 +1,14 @@
+
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+{% block content %}
+
+<div class='container'>
+    <a href="{{url_for('main.new_post')}}" class="btn btn-primary">Create a post</a>
+    <h2 class='text-center'> Country List</h2><br>
+    <div class='row'>{{ macro.displayCountries(all_countries)}}</div>
+    
+<div
+
+{% endblock%}

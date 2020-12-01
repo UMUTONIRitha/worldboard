@@ -1,0 +1,33 @@
+{% macro displayCountries(all_countries) %}
+    {% for country in all_countries %}
+    <div class='col-md-3 row' style='grid-column-gap: 5px;'>
+        <div class='col-md-6'><img src='{{ country.flag}}' width=100%></div>
+        <div class='col-md-6'>
+            <span>Name: {{ country.name}}</span><br>
+            <span>Capital city: {{ country.capital}}</span>
+            <span><a href="{{url_for('main.posts',name=country.name)}}">Click to view posts</a></span>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endmacro %}
+
+{% macro displayPosts(posts)%}
+{%for post in posts%}
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
+    <div class="panel panel-primary panel-default">
+        <div class="panel-header">
+            <h4 class="text-info">{{post.post_title}}</h4>
+        </div>
+
+
+        <p>{{post.post_content}}</p>
+
+        <div class="panel-footer panel-primary">
+            <p>Posted by: {{post.user.username}}</p>
+        </div>
+
+    </div>
+</div>
+{%endfor%}
+{%endmacro%}
