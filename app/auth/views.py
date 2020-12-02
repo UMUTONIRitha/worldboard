@@ -7,6 +7,7 @@ from . import auth
 from ..email import mail_message
 
 
+
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     login_form = LoginForm()
@@ -39,3 +40,4 @@ def register():
 def logout():
     logout_user()
     return redirect(url_for("main.index"))
+
